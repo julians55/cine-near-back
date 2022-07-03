@@ -11,5 +11,5 @@ movies = list()
 
 for i in mov:
     if mov.index(i)<10:
-        movies.append(i.text)
+        movies.append({"Name":i.text})
 

@@ -2,9 +2,11 @@ from flask import Flask, jsonify, request
 from scrapper import movies
 app = Flask(__name__)
 
-@app.route('/ping', methods=['GET'])
+@app.route('/onpremiere', methods=['GET'])
 def ping():
-    return jsonify(movies)
+    response = jsonify(movies)
+    response.headers.add("Access-Control-Allow-Origin","*")
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True, port=4000)
